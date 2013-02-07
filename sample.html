@@ -1,0 +1,53 @@
+<html>
+  <head>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.3.js"></script>
+
+<script src="jquery.dailycount.js" type="text/javascript"></script>
+<style type="text/css">
+
+abbr, acronym {
+border-bottom: 1px dotted #000;
+cursor: help;
+}
+
+</style>
+<title>Sample jquery.dailycount.js</title>
+ </head>
+  <body>
+<fieldset class="notlive">
+			
+    <ul>
+                    <li><abbr class="dailycount" title="07 Feb 2013 13:00:00 -0200"></abbr><br />
+	            <li><abbr class="dailycount" title="06 Feb 2013 23:00:00 -0200"></abbr><br />
+				<li><abbr class="dailycount" title="05 Feb 2013 23:00:00 -0200"></abbr><br />
+				<li><abbr class="dailycount" title="04 Feb 2013 20:00:00 -0200"></abbr><br />
+                <li><abbr class="dailycount" title="07 Jan 2013 09:32:19 -0200"></abbr><br />
+				<li><abbr class="dailycount" title="Sat, 23 Jan 2013 21:50:59 -0200"></abbr><br />
+				<li><abbr class="dailycount" title="Sat, 16 Jun 2012 16:35:14 -0200"></abbr><br />
+                    <li><abbr class="dailycount" title="Tue, 15 Oct 2012 07:39:19 -0200"></abbr><br /></ul>
+		</fieldset><hr>
+
+<script type="text/javascript">
+
+jQuery(function($) {
+    $(".dailycount").dailycount({
+    
+    units: [
+    { name: "hoje", limit: 86400 },
+    { name: "ontem", limit: 172800, past_only: true },
+    { name: "dia", limit: Infinity, in_seconds: 86400 },
+],
+locale: {
+          "past_format": "%t %s",
+          "day": "dia",
+          "days": "dias",
+          "yesterday": "ontem",
+          "ago": "atrás"
+        }
+    
+    });
+});
+
+</script>
+  </body>
+</html>                    
